@@ -1,6 +1,6 @@
 <template>
-    <select v-model="changeCamera">
-        <option v-for="option in camera_options" :value="option.value" :key="option.value">
+    <select v-model="changeMic">
+        <option v-for="option in mic_options" :value="option.value" :key="option.value">
             {{ option.name }}
         </option>
     </select>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'CameraSelect',
+    name: 'MicSelect',
     components: {
         
     },
@@ -17,23 +17,23 @@ export default {
             await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
             const devices = await navigator.mediaDevices.enumerateDevices();
             devices.map(device => {
-                if (device.kind === "videoinput")
-                    this.camera_options.push({
+                if (device.kind === "audioinput")
+                    this.mic_options.push({
                         name: device.label,
                         value: device.deviceId
                     });
             });
         })().then(() => {
-            this.camera_options[0].name = 'Select a camera.'
+            this.mic_options[0].name = 'Select a microphone.'
         });
     },
     computed: {
-        changeCamera: {
+        changeMic: {
             get() {
-                return this.camera_options[0].value
+                return this.mic_options[0].value
             },
             set(newValue) {
-                this.$emit("change-camera", newValue)
+                this.$emit("change-mic", newValue)
             },
         },
     },
@@ -41,14 +41,10 @@ export default {
     },
     data() {
         return {
-            camera_options: [
+            mic_options: [
                 {
                     value: 'none',
                     name: 'Loading...'
-                },
-                {
-                    value: 'audioWaveform',
-                    name: 'Audio waveform'
                 }
             ]
         }
