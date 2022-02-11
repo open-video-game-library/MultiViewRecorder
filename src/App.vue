@@ -11,9 +11,13 @@
         </header>
         <transition name="fade">
             <Settings v-show="showSettings"
-                @change-canvas-size="setCanvasSize"
                 @close-settings="closeSettings"
+                @change-canvas-size="setCanvasSize"
+                @change-frame-rate="setFrameRate"
+                @change-mimetype="setMimetype"
                 :canvasHeight="canvasHeight"
+                :frameRate="frameRate"
+                :mimetype="mimetype"
             />
         </transition>
         <transition name="fade">
@@ -23,11 +27,16 @@
         </transition>
         <main class="wrapper">
             <div class="container">
-                <Recorder id="recorder" :canvasHeight="canvasHeight" />
+                <Recorder id="recorder" 
+                    :canvasHeight="canvasHeight"
+                    :frameRate="frameRate"
+                    :mimetype="mimetype"
+                />
             </div>
         </main>
         <footer>
-            Presented by Open Video Game Library <fa icon="copyright" /> {{ year }} WATANABE LABORATORY, Meiji Univ.
+            Presented by Open Video Game Library <fa icon="copyright" /> {{ year }}
+            <a href="https://keita-lab.jp/" target="_blank" rel="noopener noreferrer">WATANABE LABORATORY</a>, Meiji Univ.
         </footer>
     </div>
 </template>
@@ -51,6 +60,12 @@ export default {
         setCanvasSize(value) {
             this.canvasHeight = value
         },
+        setFrameRate(value) {
+            this.frameRate = value
+        },
+        setMimetype(value) {
+            this.mimetype = value
+        },
         openSettings() {
             this.showSettings = true
         },
@@ -67,6 +82,8 @@ export default {
     data(){
         return {
             canvasHeight: 360,
+            frameRate: 30,
+            mimetype: 'video/webm;codecs=vp8',
             showSettings: false,
             showInformation: false,
             year: 2022
