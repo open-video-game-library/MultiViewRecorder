@@ -128,7 +128,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
     .container {
-        max-width: 1280px;
+        max-width: 1920px;
         margin: 0 auto;
         padding: 0 24px;
     }
