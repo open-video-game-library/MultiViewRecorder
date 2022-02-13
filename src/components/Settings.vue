@@ -189,10 +189,18 @@ export default {
 }
 .popup {
     width: 640px;
+    height: 360px;
     position: fixed;
     border-radius: 8px;
     background-color: #fff;
     padding-bottom: 24px;
+    overflow: auto;
+    header {
+        position: -webkit-sticky; /* safari対応 */
+        position: sticky;
+        top: 0px;
+        background-color: white;
+    }
 }
 </style>
 
