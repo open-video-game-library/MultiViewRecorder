@@ -83,7 +83,7 @@ export default {
         return {
             canvasHeight: 360,
             frameRate: 30,
-            mimetype: 'video/webm;codecs=vp8',
+            mimetype: 'video/webm',
             showSettings: false,
             showInformation: false,
             year: 2022

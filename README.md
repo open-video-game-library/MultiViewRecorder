@@ -1,24 +1,6 @@
 # multi-view-recorder
 
-## Project setup
-```
-npm install
-```
+Application: https://open-video-game-library.github.io/multi-view-recorder/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Presented by Open Video Game Libarry (c) 2022 [WATANABE LABORATORY](https://keita-lab.jp/), Meiji Univ.

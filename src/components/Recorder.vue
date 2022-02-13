@@ -152,6 +152,10 @@ export default {
         },
         clickRecordingBtn() {
             if(!this.isRecording) {
+                if (this.audioId === '') {
+                    alert('マイクを選択してください')
+                    return
+                }
                 if (!confirm('録画を開始します')) return;
                 const videoStream = this.canvas.captureStream()
                 navigator.mediaDevices.getUserMedia({
@@ -182,6 +186,8 @@ export default {
                     const videoBlob = new Blob([event.data], { type: event.data.type })
                     const blobUrl = window.URL.createObjectURL(videoBlob)
                     if (this.mimetype.match(/webm/)) anchor.download = this.getNow() + '.webm'
+                    if (this.mimetype.match(/WEBM/)) anchor.download = this.getNow() + '.WEBM'
+                    else if (this.mimetype.match(/matroska/)) anchor.download = this.getNow() + '.mkv'
                     else if (this.mimetype.match(/mpeg/)) anchor.download = this.getNow() + '.mp4'
                     anchor.href = blobUrl
                     anchor.click()

@@ -56,7 +56,7 @@ export default {
         this.mimetype_options.map((value, index) => {
             if(MediaRecorder.isTypeSupported(value.name)) {
                 this.mimetype_options[index].isSupported = true
-                this.select_mimetype = value.name
+                // this.select_mimetype = value.name
             }
         })
     },
@@ -116,12 +116,56 @@ export default {
                     name: 'video/webm;codecs=vp9',
                     isSupported: false
                 },
+                {        
+                    name: 'video/webm;codecs=vp8.0',
+                    isSupported: false
+                },
+                {        
+                    name: 'video/webm;codecs=vp9.0',
+                    isSupported: false
+                },                
                 {
                     name: 'video/webm;codecs=daala',
                     isSupported: false
                 },
                 {
                     name: 'video/webm;codecs=h264',
+                    isSupported: false
+                },
+                {
+                    name: 'video/webm;codecs=H264',
+                    isSupported: false
+                },
+                {
+                    name: 'video/webm;codecs=avc1',
+                    isSupported: false
+                },
+                {        
+                    name: 'video/webm;codecs=vp8,opus',
+                    isSupported: false
+                },
+                {        
+                    name: 'video/WEBM;codecs=VP8,OPUS',
+                    isSupported: false
+                },
+                {        
+                    name: 'video/webm;codecs=vp9,opus',
+                    isSupported: false
+                },
+                {        
+                    name: 'video/webm;codecs=vp8,vp9,opus',
+                    isSupported: false
+                },
+                {
+                    name: 'video/webm;codecs=h264,opus',
+                    isSupported: false
+                },
+                {
+                    name: 'video/webm;codecs=h264,vp9,opus',
+                    isSupported: false
+                },
+                {
+                    name: 'video/x-matroska;codecs=avc1',
                     isSupported: false
                 },
                 {
@@ -162,8 +206,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h3 { text-align: left; }
-    * { flex-basis: 50%; }
+    h3 {
+        text-align: left;
+        flex-basis: 40%;
+    }
+    select { flex-basis: 60%; }
 }
 .wrapper {
     margin: 0 auto;
