@@ -23,6 +23,7 @@
         <transition name="fade">
             <Information v-show="showInformation"
                 @close-information="closeInformation"
+                @open-settings="openSettings"
             />
         </transition>
         <main class="wrapper">
