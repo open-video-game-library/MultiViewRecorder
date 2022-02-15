@@ -36,7 +36,7 @@
             </div>
         </main>
         <footer>
-            Presented by Open Video Game Library <fa icon="copyright" /> {{ year }}
+            Presented by Open Video Game Library, 
             <a href="https://keita-lab.jp/" target="_blank" rel="noopener noreferrer">WATANABE LABORATORY</a>, Meiji Univ.
         </footer>
     </div>
