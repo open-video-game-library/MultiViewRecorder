@@ -1,5 +1,5 @@
 <template>
-    <div class="background-shadow">
+    <div class="background-shadow" @click="closeInformation">
         <div class="popup">
             <header class="wrapper">
                 <h2>How to use</h2>
