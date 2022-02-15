@@ -1,5 +1,5 @@
 <template>
-    <div class="background-shadow" @click="closeSettings">
+    <div class="background-shadow" @click.self="closeSettings">
         <div class="popup">
             <header class="wrapper">
                 <h2>Settings</h2>
