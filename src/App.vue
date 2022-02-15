@@ -124,6 +124,10 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+
+.red {
+    color: red;
+}
 </style>
 
 <style lang="scss" scoped>

@@ -9,7 +9,7 @@
             </header>
             <main class="wrapper">
                 <section>
-                    <p>ChromeとFirefoxで動作します。</p>
+                    <p>ChromeとFirefoxで動作します。<span class="red">Chrome推奨です。</span></p>
                 </section>
                 <section>
                     <div class="flex-container">
@@ -18,7 +18,7 @@
                     </div>
                     <p><u>Size</u>: 録画する画面のサイズ。3段階から選択できます。</p>
                     <p><u>Frame rate (canvas)</u>: キャンバスの更新頻度です。カメラのインプットのフレームレートではありません。</p>
-                    <p><u>Mimetype</u>: 出力する動画の形式です。「video/webm」推奨です。</p>
+                    <p><u>Mimetype</u>: 出力する動画の形式です。<span class="red">「video/webm」推奨です。</span></p>
                 </section>
                 <section>
                     <h3>② カメラとマイクを選択</h3>
