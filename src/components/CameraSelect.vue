@@ -47,6 +47,10 @@ export default {
                     name: 'Loading...'
                 },
                 {
+                    value: 'displayMedia',
+                    name: 'Display'
+                },
+                {
                     value: 'audioWaveform',
                     name: 'Audio waveform'
                 }

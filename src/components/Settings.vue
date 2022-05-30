@@ -191,7 +191,7 @@ export default {
     width: 640px;
     height: 360px;
     position: fixed;
-    border-radius: 8px;
+    border-radius: 2px;
     background-color: #fff;
     padding-bottom: 24px;
     overflow: auto;

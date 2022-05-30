@@ -58,6 +58,19 @@ export default {
             switch(value) {
                 case 'none':
                     break;
+                case 'displayMedia':
+                    navigator.mediaDevices.getDisplayMedia({
+                        video: {
+                            cursor: "always"
+                        },
+                        audio: true
+                    }).then(stream => {
+                        this.video[videoIndex].value = 'displayMedia'
+                        this.playVideo(videoIndex, stream)
+                    }).catch(function(e) {
+                        alert("ERROR: ディスプレイのキャプチャに失敗しました: " + e.message)
+                    });
+                    break;
                 case 'audioWaveform':
                     navigator.mediaDevices.getUserMedia({
                         audio: {
@@ -307,7 +320,7 @@ export default {
         background-color: white;
         color: red;
         border-color: red;
-        border-radius: 4px;
+        border-radius: 2px;
     }
 }
 section {
