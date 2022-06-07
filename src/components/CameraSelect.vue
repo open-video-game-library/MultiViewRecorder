@@ -51,8 +51,12 @@ export default {
                     name: 'Display'
                 },
                 {
-                    value: 'audioWaveform',
-                    name: 'Audio waveform'
+                    value: 'audioTime',
+                    name: 'Audio Time Domain'
+                },
+                {
+                    value: 'audioFrequency',
+                    name: 'Audio Frequency Domain'
                 }
             ]
         }

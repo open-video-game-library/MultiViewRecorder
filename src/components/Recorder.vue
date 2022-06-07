@@ -58,6 +58,32 @@ export default {
             switch(value) {
                 case 'none':
                     break;
+                case 'audioTime':
+                    navigator.mediaDevices.getUserMedia({
+                        audio: {
+                            deviceId: this.audioId
+                        },
+                        video: false
+                    }).then(stream => {
+                        this.video[videoIndex].value = 'audioWaveform'
+                        this.playAudioTime(videoIndex, stream)
+                    }).catch(function(e) {
+                        alert("ERROR: 音声の取得に失敗しました: " + e.message)
+                    });
+                    break;
+                case 'audioFrequency':
+                    navigator.mediaDevices.getUserMedia({
+                        audio: {
+                            deviceId: this.audioId
+                        },
+                        video: false
+                    }).then(stream => {
+                        this.video[videoIndex].value = 'audioWaveform'
+                        this.playAudioFrequency(videoIndex, stream)
+                    }).catch(function(e) {
+                        alert("ERROR: 音声の取得に失敗しました: " + e.message)
+                    });
+                    break;
                 case 'displayMedia':
                     navigator.mediaDevices.getDisplayMedia({
                         video: {
@@ -69,19 +95,6 @@ export default {
                         this.playVideo(videoIndex, stream)
                     }).catch(function(e) {
                         alert("ERROR: ディスプレイのキャプチャに失敗しました: " + e.message)
-                    });
-                    break;
-                case 'audioWaveform':
-                    navigator.mediaDevices.getUserMedia({
-                        audio: {
-                            deviceId: this.audioId
-                        },
-                        video: false
-                    }).then(stream => {
-                        this.video[videoIndex].value = 'audioWaveform'
-                        this.playAudioWaveform(videoIndex, stream)
-                    }).catch(function(e) {
-                        alert("ERROR: 音声の取得に失敗しました: " + e.message)
                     });
                     break;
                 default:
@@ -119,28 +132,57 @@ export default {
                 }, 1000 / this.fps);
             };
         },
-        playAudioWaveform(videoIndex, stream) {
+        playAudioTime(videoIndex, stream) {
             const audioContext = new AudioContext()
             const sourceNode = audioContext.createMediaStreamSource(stream)
             const analyserNode = audioContext.createAnalyser()
-            analyserNode.fftSize = 128
             sourceNode.connect(analyserNode)
+            analyserNode.fftSize = 2048
+            const array = new Uint8Array(analyserNode.fftSize)
             this.video[videoIndex].timer_audio = setInterval(() => {
-                const barWidth = (this.canvasWidth / 2) / analyserNode.fftSize
-                const array = new Uint8Array(analyserNode.fftSize)
-                analyserNode.getByteTimeDomainData(array)
                 this.context.fillStyle = '#fefefe'
                 this.context.fillRect(this.video[videoIndex].posX, this.video[videoIndex].posY, this.canvasWidth / 2, this.canvasHeight / 2)
-
+                analyserNode.getByteTimeDomainData(array)
+                const barWidth = (this.canvasWidth / 2) / analyserNode.fftSize
                 for (let i = 0; i < analyserNode.fftSize; ++i) {
                     const value = array[i]
                     const percent = value / 255
                     const height = (this.canvasHeight / 2) * percent
                     const offset = (this.canvasHeight / 2) - height
 
-                    this.context.fillStyle = 'lightgreen'
+                    this.context.fillStyle = 'rgb(50, ' + (offset + 100) + ', 50)'
                     this.context.fillRect(this.video[videoIndex].posX + (i * barWidth), this.video[videoIndex].posY + offset, barWidth, 2)
                 }
+            }, 1000 / this.fps);
+        },
+        playAudioFrequency(videoIndex, stream) {
+            const audioContext = new AudioContext()
+            const sourceNode = audioContext.createMediaStreamSource(stream)
+            const analyserNode = audioContext.createAnalyser()
+            sourceNode.connect(analyserNode)
+            analyserNode.fftSize = 2048
+            const bufferLength = analyserNode.frequencyBinCount
+            console.log('bufferLength: ' + bufferLength)
+            const array = new Uint8Array(bufferLength)
+            this.video[videoIndex].timer_audio = setInterval(() => {
+                this.context.fillStyle = '#fefefe'
+                this.context.fillRect(this.video[videoIndex].posX, this.video[videoIndex].posY, this.canvasWidth / 2, this.canvasHeight / 2)
+                analyserNode.getByteFrequencyData(array);
+                // const maxHzRange = 5000;
+                // const maxI = (maxHzRange * analyserNode.fftSize) / 44100
+                const barWidth = (this.canvasWidth / 2) / bufferLength;
+                let barHeight;
+                let x = 0;
+                for(let i = 0; i < bufferLength; i++) {
+                    barHeight = array[i]
+                    this.context.fillStyle = 'rgb(' + (barHeight + 100) + ', 50, 50)'
+                    this.context.fillRect(this.video[videoIndex].posX + x, this.video[videoIndex].posY + (this.canvasHeight / 2) - barHeight / 2, barWidth, barHeight / 2)
+                    x += barWidth
+                }
+                const maxHzIndex = array.indexOf(Math.max(...array))
+                this.context.fillStyle = 'rgb(50 , 50, 50)'
+                this.context.font = '48px sans-serif'
+                this.context.fillText(Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000 + 'Hz', this.video[videoIndex].posX, this.video[videoIndex].posY + 48)
             }, 1000 / this.fps);
         },
         stopVideo(videoIndex) {
@@ -150,6 +192,7 @@ export default {
                 case 'audioWaveform':
                     clearInterval(this.video[videoIndex].timer_audio)
                     break;
+                case 'displayMedia':
                 default:
                     if (this.video[videoIndex].element.srcObject !== null) {
                         this.video[videoIndex].element.pause()
