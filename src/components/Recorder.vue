@@ -160,26 +160,32 @@ export default {
             const sourceNode = audioContext.createMediaStreamSource(stream)
             const analyserNode = audioContext.createAnalyser()
             sourceNode.connect(analyserNode)
-            analyserNode.fftSize = 2048
+            analyserNode.fftSize = 32768
             const bufferLength = analyserNode.frequencyBinCount
-            console.log('bufferLength: ' + bufferLength)
             const array = new Uint8Array(bufferLength)
+            // 取得する周波数の範囲を設定
+            const maxHzRange = 4000;
+            const minHzRange = 200;
+            const maxArrayIndex = parseInt((maxHzRange * analyserNode.fftSize) / 44100)
+            const minArrayIndex = parseInt((minHzRange * analyserNode.fftSize) / 44100)
+            console.log(`bufferLength: ${bufferLength}, maxArrayIndex: ${maxArrayIndex}, minArrayIndex: ${minArrayIndex}`)
+            // 範囲内の新しい配列を生成
+            const newArray = array.slice(minArrayIndex, maxArrayIndex)
             this.video[videoIndex].timer_audio = setInterval(() => {
                 this.context.fillStyle = '#fefefe'
                 this.context.fillRect(this.video[videoIndex].posX, this.video[videoIndex].posY, this.canvasWidth / 2, this.canvasHeight / 2)
-                analyserNode.getByteFrequencyData(array);
-                // const maxHzRange = 5000;
-                // const maxI = (maxHzRange * analyserNode.fftSize) / 44100
-                const barWidth = (this.canvasWidth / 2) / bufferLength;
+                analyserNode.getByteFrequencyData(newArray)
+                // const barWidth = (this.canvasWidth / 2) / bufferLength
+                const barWidth = (this.canvasWidth / 2) / newArray.length
                 let barHeight;
                 let x = 0;
-                for(let i = 0; i < bufferLength; i++) {
-                    barHeight = array[i]
+                for(let i = 0; i < newArray.length; i++) {
+                    barHeight = newArray[i]
                     this.context.fillStyle = 'rgb(' + (barHeight + 100) + ', 50, 50)'
                     this.context.fillRect(this.video[videoIndex].posX + x, this.video[videoIndex].posY + (this.canvasHeight / 2) - barHeight / 2, barWidth, barHeight / 2)
                     x += barWidth
                 }
-                const maxHzIndex = array.indexOf(Math.max(...array))
+                const maxHzIndex = newArray.indexOf(Math.max(...newArray))
                 this.context.fillStyle = 'rgb(50 , 50, 50)'
                 this.context.font = '48px sans-serif'
                 this.context.fillText(Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000 + 'Hz', this.video[videoIndex].posX, this.video[videoIndex].posY + 48)
