@@ -186,10 +186,13 @@ export default {
                     this.context.fillRect(this.video[videoIndex].posX + x, this.video[videoIndex].posY + (this.canvasHeight / 2) - barHeight / 2, barWidth, barHeight / 2)
                     x += barWidth
                 }
-                const maxHzIndex = newArray.indexOf(Math.max(...newArray))
-                this.context.fillStyle = 'rgb(50 , 50, 50)'
+                // 最大値のインデックスを出力（範囲除外したminArrayIndexを足すのを忘れずに）
+                const maxHzIndex = newArray.indexOf(Math.max(...newArray)) + minArrayIndex
+                this.context.fillStyle = 'rgb(50, 50, 50)'
                 this.context.font = '48px sans-serif'
-                this.context.fillText(Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000 + 'Hz', this.video[videoIndex].posX, this.video[videoIndex].posY + 48)
+                let hz = Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000
+                if (hz < minHzRange || hz > maxHzRange) hz = '-.-'
+                this.context.fillText(hz + 'Hz', this.video[videoIndex].posX + 8, this.video[videoIndex].posY + 48)
             }, 1000 / this.fps);
         },
         stopVideo(videoIndex) {
