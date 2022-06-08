@@ -161,6 +161,7 @@ export default {
             const analyserNode = audioContext.createAnalyser()
             sourceNode.connect(analyserNode)
             analyserNode.fftSize = 32768
+            // ↑多分これが設定できる最大値
             const bufferLength = analyserNode.frequencyBinCount
             const array = new Uint8Array(bufferLength)
             // 取得する周波数の範囲を設定

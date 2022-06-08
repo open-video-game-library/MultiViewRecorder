@@ -52,11 +52,11 @@ export default {
                 },
                 {
                     value: 'audioTime',
-                    name: 'Audio Time Domain'
+                    name: 'Audio Time Domain（0ms〜23ms）'
                 },
                 {
                     value: 'audioFrequency',
-                    name: 'Audio Frequency Domain'
+                    name: 'Audio Frequency Domain（200Hz〜4000Hz）'
                 }
             ]
         }
