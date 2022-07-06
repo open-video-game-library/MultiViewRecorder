@@ -56,7 +56,7 @@ export default {
                 },
                 {
                     value: 'audioFrequency',
-                    name: 'Audio Frequency Domain（200Hz〜4000Hz）'
+                    name: 'Audio Frequency Domain（0Hz〜5000Hz）'
                 }
             ]
         }

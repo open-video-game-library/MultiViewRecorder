@@ -165,8 +165,8 @@ export default {
             const bufferLength = analyserNode.frequencyBinCount
             const array = new Uint8Array(bufferLength)
             // 取得する周波数の範囲を設定
-            const maxHzRange = 4000;
-            const minHzRange = 200;
+            const maxHzRange = 5000;
+            const minHzRange = 0;
             const maxArrayIndex = parseInt((maxHzRange * analyserNode.fftSize) / 44100)
             const minArrayIndex = parseInt((minHzRange * analyserNode.fftSize) / 44100)
             console.log(`bufferLength: ${bufferLength}, maxArrayIndex: ${maxArrayIndex}, minArrayIndex: ${minArrayIndex}`)
@@ -187,12 +187,12 @@ export default {
                     x += barWidth
                 }
                 // 最大値のインデックスを出力（範囲除外したminArrayIndexを足すのを忘れずに）
-                const maxHzIndex = newArray.indexOf(Math.max(...newArray)) + minArrayIndex
-                this.context.fillStyle = 'rgb(50, 50, 50)'
-                this.context.font = '48px sans-serif'
-                let hz = Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000
-                if (hz < minHzRange || hz > maxHzRange) hz = '-.-'
-                this.context.fillText(hz + 'Hz', this.video[videoIndex].posX + 8, this.video[videoIndex].posY + 48)
+                // const maxHzIndex = newArray.indexOf(Math.max(...newArray)) + minArrayIndex
+                // this.context.fillStyle = 'rgb(50, 50, 50)'
+                // this.context.font = '48px sans-serif'
+                // let hz = Math.floor(maxHzIndex * (44100 / analyserNode.fftSize) * 1000) / 1000
+                // if (hz < minHzRange || hz > maxHzRange) hz = '-.-'
+                // this.context.fillText(hz + 'Hz', this.video[videoIndex].posX + 8, this.video[videoIndex].posY + 48)
             }, 1000 / this.fps);
         },
         stopVideo(videoIndex) {
