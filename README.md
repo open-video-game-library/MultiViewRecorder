@@ -5,6 +5,8 @@ Application: https://open-video-game-library.github.io/multi-view-recorder/
 
 Presented by Open Video Game Libarry (c) 2022 [WATANABE LABORATORY](https://keita-lab.jp/), Meiji Univ.
 
+
+
 ↓ 追加しました (iida)
 
 どんなゲームか、何をするゲームか、特徴的な要素（OVGL特有の要素）は何かを記述
