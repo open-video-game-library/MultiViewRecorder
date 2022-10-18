@@ -62,22 +62,16 @@ Presented by Open Video Game Libarry (c) 2022 [WATANABE LABORATORY](https://keit
 
 - [研究利用しやすく標準性を目指したビデオゲームの設計と開発](http://id.nii.ac.jp/1001/00212465/)
 ```
-@inproceedings{weko_212571_1,
-   author	 = "岡,拓也 and 川島,拓也 and 林,大智 and 渡邊,恵太",
-   title	 = "研究利用しやすく標準性を目指したビデオゲームの設計と開発",
-   booktitle	 = "エンタテインメントコンピューティングシンポジウム論文集",
-   year 	 = "2021",
-   volume	 = "2021",
-   number	 = "",
-   pages	 = "181--186",
-   month	 = "aug"
+@techreport{weko_214590_1,
+   author	 = "岡,拓也 and 川島,拓也 and 簗瀬,洋平 and 渡邊,恵太",
+   title	 = "HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ",
+   year 	 = "2022",
+   institution	 = "明治大学大学院先端数理科学研究科先端メディアサイエンス専攻, 明治大学大学院先端数理科学研究科先端メディアサイエンス専攻, ユニティ・テクノロジーズ・ジャパン株式会社, 明治大学総合数理学部先端メディアサイエンス学科",
+   number	 = "12",
+   month	 = "jan"
 }
 ```
 
-- （このゲームについて言及した自身の論文があり、それを引用してほしい場合は、その論文のURLを記載）
-```
-BiBTeX
-```
 
 ## Note
 
