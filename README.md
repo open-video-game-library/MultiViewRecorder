@@ -60,7 +60,7 @@ Presented by Open Video Game Libarry (c) 2022 [WATANABE LABORATORY](https://keit
 
 5. ゲーム名 を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
 
-- [研究利用しやすく標準性を目指したビデオゲームの設計と開発](http://id.nii.ac.jp/1001/00212465/)
+- [HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ](http://id.nii.ac.jp/1001/00214482/)
 ```
 @techreport{weko_214590_1,
    author	 = "拓也,岡 and 拓也,川島 and 洋平,簗瀬 and 恵太,渡邊",
