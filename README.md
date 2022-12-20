@@ -63,7 +63,7 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 
 ## Licence
 
-This content is licensed under the MIT License.
+This content is licensed under the [MIT License](https://github.com/open-video-game-library/multi-view-recorder/blob/master/LICENSE).
 
 
 ## Citiation
