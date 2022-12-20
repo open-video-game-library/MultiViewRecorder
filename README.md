@@ -42,7 +42,7 @@ You can change parameters related to recording from settings(the gear icon in th
 
 1. Collection of speech data using the retrospective think-aloud method.
 
-  Participants reflect on their own behavior using videos during the task recorded by the Multi View Recorder.
+   Participants reflect on their own behavior using videos during the task recorded by the Multi View Recorder.
 
 
 ## Requirement
