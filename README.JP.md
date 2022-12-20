@@ -84,6 +84,6 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 ```
 
 
-## お問い合せ
+## お問い合わせ
 
 意見や要望、質問などがありましたら、[こちら](https://open-video-game-library.github.io/info/contact/)からお問い合わせ下さい。
