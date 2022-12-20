@@ -1,5 +1,7 @@
 # Multi View Recorder
 
+[日本語版README](https://github.com/open-video-game-library/multi-view-recorder/blob/master/README.JP.md)
+
 Multi View Recorder is a web application that records multiple webcam videos.
 
 Application: https://open-video-game-library.github.io/multi-view-recorder/
