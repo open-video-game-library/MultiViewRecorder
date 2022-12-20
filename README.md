@@ -27,12 +27,15 @@ Pressing the same button again will stop recording and start downloading the vid
 You can change parameters related to recording from settings(the gear icon in the upper right corner).
 
 - Size: Size of the screen to record.
+
    640\*360 / 1280\*720 / 1920\*1080
 
 - Frame rate (canvas): How often the canvas is updated (not the frame rate of the camera input)
+
    15 / 30 / 60
 
 - Mimetype: Output video format
+
    "video/webm" is recommended.
 
 ### Research Applications
