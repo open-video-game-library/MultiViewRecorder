@@ -35,7 +35,7 @@ You can change parameters related to recording from settings(the gear icon in th
 - Mimetype: Output video format
    "video/webm" is recommended.
 
-### 研究利用例
+### Research Applications
 
 1. Collection of speech data using the retrospective think-aloud method.
 
