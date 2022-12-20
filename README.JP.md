@@ -44,7 +44,7 @@ https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-
 
 1. レトロスペクティブシンクアラウド法による発話データの収集
 
-Multi View Recorderで録画したタスク中の動画を用いて、実験参加者が自身の行動を振り返る。
+   Multi View Recorderで録画したタスク中の動画を用いて、実験参加者が自身の行動を振り返る。
 
 
 ## 環境
