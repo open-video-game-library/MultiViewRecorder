@@ -60,7 +60,7 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 
 ## ライセンス
 
-本コンテンツは、MITライセンスのもとで利用が許可されています。
+本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/multi-view-recorder/blob/master/LICENSE)のもとで利用が許可されています。
 
 
 ## 引用
