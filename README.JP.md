@@ -1,13 +1,15 @@
 # Multi View Recorder
 
-Multi View Recorder is a web application that records multiple webcam videos.
+[English version README](https://github.com/open-video-game-library/multi-view-recorder/blob/master/README.md)
 
-Application: https://open-video-game-library.github.io/multi-view-recorder/
+Multi View Recorderは、複数のカメラ映像を録画できるWebアプリケーションです。
+
+こちらから利用できます: https://open-video-game-library.github.io/multi-view-recorder/
 
 https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-8f25-158b96b4683b.mp4
 
 
-## Contents
+## コンテンツ
 
 最大4つの映像を同時に録画、ダウンロードできます。
 
@@ -20,9 +22,9 @@ https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-
 もう一度同じボタンを押すことで録画が停止し、動画のダウンロードが始まります。
 
 
-## Features
+## 機能
 
-### Parameters
+### パラメータ
 
 右上にある歯車アイコンから、録画に関するパラメータを変更できます。
 
@@ -41,15 +43,13 @@ https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-
 
 Multi View Recorderで録画したタスク中の動画を用いて、実験参加者が自身の行動を振り返る。
 
-2. 
 
-
-## Requirement
+## 環境
 
 vue.js: ^3.0.0
 
 
-## Installation
+## インストール方法
 
 本リポジトリのデータは下記のコマンドを入力することでローカル環境にクローンできます。
 
@@ -58,19 +58,15 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 ```
 
 
-## Licence
+## ライセンス
 
-1. ゲーム名 は無料でご利用できます。
+本コンテンツは、MITライセンスのもとで利用が許可されています。
 
-2. 営利目的・公序良俗に反する目的でない限り、研究目的での利用を含め、あらゆる用途で利用できます。
 
-3. ダウンロードしたデータを改変し、ご利用いただいても構いません。
+## 引用
 
-4. 利用報告をする必要はありませんが、改変したデータを二次配布する場合を含め、ゲーム名 を利用した場合は、その旨を明記して下さい。
+[HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ](http://id.nii.ac.jp/1001/00214482/)
 
-5. ゲーム名 を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
-
-- [HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ](http://id.nii.ac.jp/1001/00214482/)
 ```
 @inproceedings{weko_214590_1,
    author	 = "拓也,岡 and 拓也,川島 and 大智,林 and 恵太,渡邊",
@@ -85,6 +81,6 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 ```
 
 
-## Contact
+## お問い合せ
 
 意見や要望、質問などがありましたら、[こちら](https://open-video-game-library.github.io/info/contact/)からお問い合わせ下さい。
