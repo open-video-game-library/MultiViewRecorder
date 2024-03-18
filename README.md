@@ -4,7 +4,7 @@
 
 Multi View Recorder is a web application that records multiple webcam videos.
 
-Application: https://open-video-game-library.github.io/multi-view-recorder/
+Application: https://open-video-game-library.github.io/MultiViewRecorder/
 
 https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-8f25-158b96b4683b.mp4
 
@@ -63,31 +63,13 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 
 ## Licence
 
-This content is licensed under the [MIT License](https://github.com/open-video-game-library/multi-view-recorder/blob/master/LICENSE).
+This content is licensed under the [MIT License](https://github.com/open-video-game-library/multi-view-recorder/blob/master/LICENSE.md).
 
 
-## Citiation
+## Use in Research
 
-HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ
-
-Exploring Requirements for Evaluation Experimental Video Games in HCI Research and Case Studies Using Open Video Game Library.
-
-[Click here for the paper page.](http://id.nii.ac.jp/1001/00214482/)
-
-```
-@inproceedings{weko_214590_1,
-   author	 = "拓也,岡 and 拓也,川島 and 大智,林 and 恵太,渡邊",
-   title	 = "HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ",
-   booktitle	 = "研究報告ヒューマンコンピュータインタラクション（HCI）",
-   year 	 = "2022",
-   volume	 = "2022-HCI-196",
-   number	 = "12",
-   pages	 = "1--8",
-   month	 = "jan"
-}
-```
-
+[Recommendations for research use of this content](https://github.com/open-video-game-library/MultiViewRecorder/blob/master/RESEARCH_USE.md)
 
 ## Contact
 
-If you have any comments, requests or questions, please contact us [here](https://open-video-game-library.github.io/info/contact/).
+If you have feedback, requests, or questions, please [contact us here.](https://openvideogame.cc/contact)
