@@ -1,10 +1,10 @@
 # Multi View Recorder
 
-[English version README](https://github.com/open-video-game-library/multi-view-recorder/blob/master/README.md)
+[English version README](https://github.com/open-video-game-library/MultiViewRecorder/blob/master/README.md)
 
 Multi View Recorderは、複数のカメラ映像を録画できるWebアプリケーションです。
 
-こちらから利用できます: https://open-video-game-library.github.io/multi-view-recorder/
+こちらから利用できます: https://open-video-game-library.github.io/MultiViewRecorder/
 
 https://user-images.githubusercontent.com/52689532/208599303-5f6a3006-fb9d-477f-8f25-158b96b4683b.mp4
 
@@ -63,27 +63,14 @@ git clone git@github.com:open-video-game-library/multi-view-recorder.git
 
 ## ライセンス
 
-本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/multi-view-recorder/blob/master/LICENSE)のもとで利用が許可されています。
+本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/MultiViewRecorder/blob/master/LICENSE.md)のもとで利用が許可されています。
 
 
-## 引用
+## 研究での利用
 
-[HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ](http://id.nii.ac.jp/1001/00214482/)
-
-```
-@inproceedings{weko_214590_1,
-   author	 = "拓也,岡 and 拓也,川島 and 大智,林 and 恵太,渡邊",
-   title	 = "HCI研究における評価実験用ビデオゲームの要件探究とオープンビデオゲームライブラリを用いたケーススタディ",
-   booktitle	 = "研究報告ヒューマンコンピュータインタラクション（HCI）",
-   year 	 = "2022",
-   volume	 = "2022-HCI-196",
-   number	 = "12",
-   pages	 = "1--8",
-   month	 = "jan"
-}
-```
+[本コンテンツを研究利用する場合の推奨事項](https://github.com/open-video-game-library/MultiViewRecorder/blob/master/RESEARCH_USE.JP.md)
 
 
 ## お問い合わせ
 
-意見や要望、質問などがありましたら、[こちら](https://open-video-game-library.github.io/info/contact/)からお問い合わせ下さい。
+意見や要望、質問などがありましたら、[こちら](https://openvideogame.cc/contact/)からお問い合わせ下さい。
